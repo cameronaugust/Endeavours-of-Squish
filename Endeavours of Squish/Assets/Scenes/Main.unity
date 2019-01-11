@@ -313,7 +313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670286549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.56, z: 0}
+  m_LocalPosition: {x: 0, y: 0.666, z: 0}
   m_LocalScale: {x: 0.96154827, y: 0.96154827, z: 0.96154827}
   m_Children: []
   m_Father: {fileID: 1953653151}
@@ -343,7 +343,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726514560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.154, y: 0.414, z: 0}
+  m_LocalPosition: {x: -0.162, y: 0.495, z: 0}
   m_LocalScale: {x: 0.96155, y: 0.96155, z: 0.96155}
   m_Children: []
   m_Father: {fileID: 1953653151}
@@ -373,7 +373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840734895}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.146, y: 0.414, z: 0}
+  m_LocalPosition: {x: 0.146, y: 0.487, z: 0}
   m_LocalScale: {x: 0.96155, y: 0.96155, z: 0.96155}
   m_Children: []
   m_Father: {fileID: 1953653151}
@@ -517,4 +517,6 @@ MonoBehaviour:
   SideShooterLeft: {fileID: 726514561}
   SideShooterRight: {fileID: 1840734896}
   bulletPrefab: {fileID: 3329012315368433857, guid: 49ec8bc7fe7e24f409c7dffca29b97c8,
+    type: 3}
+  smallBulletPrefab: {fileID: 7770750720574121410, guid: 341d20b87e69547c39a686ecbe85665f,
     type: 3}

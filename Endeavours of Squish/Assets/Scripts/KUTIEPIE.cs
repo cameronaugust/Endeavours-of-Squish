@@ -12,6 +12,7 @@ public class KUTIEPIE : MonoBehaviour
     public Transform SideShooterRight;
 
     public GameObject bulletPrefab;
+    public GameObject smallBulletPrefab;
 
     // Update is called once per frame
     void Update()
@@ -27,10 +28,10 @@ public class KUTIEPIE : MonoBehaviour
     void Shoot()
     {
         // shooting logic
-       Instantiate(bulletPrefab, SideShooterLeft.position, SideShooterLeft.rotation);
+       Instantiate(smallBulletPrefab, SideShooterLeft.position, SideShooterLeft.rotation);
 
         Instantiate(bulletPrefab, centerShooter.position, centerShooter.rotation);
 
-       Instantiate(bulletPrefab, SideShooterRight.position, SideShooterRight.rotation);
+       Instantiate(smallBulletPrefab, SideShooterRight.position, SideShooterRight.rotation);
     }
 }
