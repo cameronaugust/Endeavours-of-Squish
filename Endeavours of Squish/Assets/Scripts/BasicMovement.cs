@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BasicMovement : MonoBehaviour
 {
+    public Animator animator;
     public float moveHoriztonal;
     public float moveVertical;
     public float speed;
@@ -12,14 +13,11 @@ public class BasicMovement : MonoBehaviour
     private Vector2 movement; 
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once to several times per frame for better physics
     void FixedUpdate()
     {
+        animator.SetFloat("Speed", moveHoriztonal); 
         moveHoriztonal = Input.GetAxis("Horizontal") * speed;
         moveVertical = Input.GetAxis("Vertical") * speed;
 
