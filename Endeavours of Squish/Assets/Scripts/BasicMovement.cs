@@ -8,7 +8,8 @@ public class BasicMovement : MonoBehaviour
     public float moveHorizontal;
     public float moveVertical;
     public float speed;
-
+	public bool facingLeft;
+	public bool facingUp;
     public Rigidbody2D player;
     private Vector2 movement; 
 
@@ -37,7 +38,14 @@ public class BasicMovement : MonoBehaviour
 		} else {
 			animator.SetBool ("Up", false);
 		}
-        moveVertical = Input.GetAxis("Vertical") * speed;
+		if (moveVertical < 0) {
+			animator.SetBool ("Down", true);
+		} else {
+			animator.SetBool ("Down", false);
+		}
+		
+		moveVertical = Input.GetAxis ("Vertical") * speed;
+
 
 		movement = new Vector2(moveHorizontal, moveVertical);
         //player is a rigidbody using velocity 
@@ -47,7 +55,7 @@ public class BasicMovement : MonoBehaviour
         faceMouse();
     }
     //comment
-    void faceMouse()
+	void faceMouse()
     {
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -58,5 +66,19 @@ public class BasicMovement : MonoBehaviour
         );
 
         transform.up = direction;
+
+
+		//seeing which direction your mouse is facing relative to player
+		if (mousePosition.x < player.position.x) {
+			facingLeft = true;
+		} else {
+			facingLeft = false;
+		}
+		if (mousePosition.y > player.position.y) {
+			facingUp = true;
+		} else {
+			facingUp = false;
+		}
+
     }
 }
