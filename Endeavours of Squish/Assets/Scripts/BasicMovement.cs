@@ -8,7 +8,10 @@ public class BasicMovement : MonoBehaviour
     public float moveHorizontal;
     public float moveVertical;
     public float speed;
-
+	public bool up;
+	public bool left;
+	public bool right;
+	public bool down;
     public Rigidbody2D player;
     private Vector2 movement; 
 
@@ -16,34 +19,32 @@ public class BasicMovement : MonoBehaviour
 
     // Update is called once to several times per frame for better physics
     void FixedUpdate() {
-		moveHorizontal = Input.GetAxis ("Horizontal") * speed;
-
-		//checks to see if player is moving left
+		//moving Left and facing left
 		if (moveHorizontal < 0) {
-			animator.SetBool ("Left", true); 
-			animator.SetBool ("Right", false); 
+			animator.SetBool ("Left", true);  
 		} else {
 			animator.SetBool ("Left", false);
 		}
+		//moving Left and facing right
 		//checks to see if player is moving right
 		if (moveHorizontal > 0) {
 			animator.SetBool("Right", true); 
-			animator.SetBool("Left", false); 
 		} else {
 			animator.SetBool("Right", false);
 		}
+
 		if (moveVertical > 0) {
 			animator.SetBool ("Up", true);
 		} else {
 			animator.SetBool ("Up", false);
 		}
+
+
+		//applying movement
+		moveHorizontal = Input.GetAxis ("Horizontal") * speed;
         moveVertical = Input.GetAxis("Vertical") * speed;
-
 		movement = new Vector2(moveHorizontal, moveVertical);
-        //player is a rigidbody using velocity 
-        //player.velocity = movement * speed;
         player.AddForce(movement * speed);
-
         faceMouse();
     }
     //comment
@@ -58,5 +59,21 @@ public class BasicMovement : MonoBehaviour
         );
 
         transform.up = direction;
+
+		if (mousePosition.x < player.position.x) {
+			left = true;
+			right = false;
+		} else {
+			right = true;
+			left = false;
+		}
+
+		if (mousePosition.y < player.position.y) {
+			down = true;
+			up = false;
+		} else {
+			up = true;
+			down = false;
+		}
     }
 }
