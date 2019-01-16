@@ -330,8 +330,8 @@ MonoBehaviour:
   - {fileID: 1214829164822896, guid: 5ede43b6a9097df44b68765db95450ac, type: 2}
   - {fileID: 1214829164822896, guid: 5ede43b6a9097df44b68765db95450ac, type: 2}
   tileStartPos: {x: 0, y: 0, z: 0}
-  gridWidth: 50
-  gridHeight: 50
+  gridWidth: 200
+  gridHeight: 100
 --- !u!1 &1840734895
 GameObject:
   m_ObjectHideFlags: 0
