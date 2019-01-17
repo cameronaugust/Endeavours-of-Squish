@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7770750720574121438}
   - component: {fileID: 7770750720574121439}
+  - component: {fileID: 3297079113021130558}
   - component: {fileID: 7770750720574121437}
   - component: {fileID: 8119850640151974125}
-  - component: {fileID: 3297079113021130558}
   m_Layer: 0
   m_Name: SmallRayBullets
   m_TagString: Untagged
@@ -82,6 +82,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3297079113021130558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7770750720574121410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b803d19cf0524d728e3a778be3b014d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+  damage: 40
+  rb: {fileID: 7770750720574121437}
+  TimeToLive: 5
 --- !u!50 &7770750720574121437
 Rigidbody2D:
   serializedVersion: 4
@@ -119,19 +135,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.01}
   m_Size: {x: 0.25, y: 0.08}
   m_Direction: 1
---- !u!114 &3297079113021130558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770750720574121410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b803d19cf0524d728e3a778be3b014d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
-  damage: 40
-  rb: {fileID: 7770750720574121437}
-  TimeToLive: 5
