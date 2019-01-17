@@ -9,16 +9,16 @@ public class Projectile : MonoBehaviour
     public Rigidbody2D rb;
     public float TimeToLive = 5f;
     // Start is called before the first frame update
-    void Start() { 
-    {
-        rb.velocity = transform.up * speed;
-        Destroy(gameObject, TimeToLive);
+    void Start() {
+        {
+            rb.velocity = transform.up * speed;
+            Destroy(gameObject, TimeToLive);
+        }
+
     }
 
-}
-
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        //Collision code for planets in terms of the bullets disapearing
+
     }
 }

@@ -123,6 +123,8 @@ GameObject:
   - component: {fileID: 182077659}
   - component: {fileID: 182077662}
   - component: {fileID: 182077663}
+  - component: {fileID: 182077661}
+  - component: {fileID: 182077660}
   m_Layer: 0
   m_Name: VolcanoPlanet
   m_TagString: Untagged
@@ -144,6 +146,38 @@ Transform:
   m_Father: {fileID: 1073216336}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &182077660
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182077658}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5.9
+--- !u!58 &182077661
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182077658}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.6
 --- !u!212 &182077662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -579,6 +613,7 @@ GameObject:
   - component: {fileID: 1953653155}
   - component: {fileID: 1953653157}
   - component: {fileID: 1953653156}
+  - component: {fileID: 1953653158}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -763,3 +798,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.25}
   m_Size: {x: 0.4, y: 0.5}
   m_Direction: 0
+--- !u!114 &1953653158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953653149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a232c9646962c42cca069e8008d92b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
