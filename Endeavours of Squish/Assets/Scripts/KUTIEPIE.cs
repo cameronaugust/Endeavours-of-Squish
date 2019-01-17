@@ -8,11 +8,10 @@ public class KUTIEPIE : MonoBehaviour
 {
     //points to transform
     public Transform centerShooter;
-    public Transform SideShooterLeft;
-    public Transform SideShooterRight;
+    public Transform PowerShot;
 
+    public GameObject powerShotPrefab;
     public GameObject bulletPrefab;
-    public GameObject smallBulletPrefab;
 
     // Update is called once per frame
     void Update()
@@ -23,15 +22,20 @@ public class KUTIEPIE : MonoBehaviour
             //calls method Shoot() when player clicks
             Shoot();
         }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            PowerShoot();
+        }
     }
 
     void Shoot()
     {
         // shooting logic
-       Instantiate(smallBulletPrefab, SideShooterLeft.position, SideShooterLeft.rotation);
-
         Instantiate(bulletPrefab, centerShooter.position, centerShooter.rotation);
-
-       Instantiate(smallBulletPrefab, SideShooterRight.position, SideShooterRight.rotation);
+    }
+    void PowerShoot()
+    {
+        Instantiate(powerShotPrefab, PowerShot.position, PowerShot.rotation);
+        Debug.Log("Power Shoot Instantiated");
     }
 }
