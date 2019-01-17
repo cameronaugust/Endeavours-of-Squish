@@ -4,33 +4,52 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed;
-    public float stoppingDistance;
-    public float retreatDistance;
+    
 
     private float timeBtwShots;
     public float startTimeBtwShots;
 
     public GameObject projectile;
-    private Transform player;
+    private Transform target;
+	public float range = 15f;
+	public GameObject target;
+	public Rigidbody2D planet;
+	 
+
     // Start is called before the first frame update
     void Start()
-    { 
-    player = GameObject.FindGameObjectWithTag("Player").transform;
+	{ 
+		InvokeRepeating ("UpdateTarget", 0f, 0.5f);
+
+    target = GameObject.FindGameObjectWithTag("Player").transform;
 
         timeBtwShots = startTimeBtwShots;
     }
 
+	void UpdateTarget ()
+	{
+
+	}
+
     // Update is called once per frame
-    void FixedUpdate()
+   
+
+	Vector2 dir = target.position - transform.position;
+	Quaternion lookRotation = Quaternion.LookRotation (dir);
+	Vector2 rotation = lookRotation.eulerAngles; 
+	planet.rotation = Quaternion.Euler (0f, rotation.y, 0f);
+
+	}
+
+	void OnDrawGizmosSelected ()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere (transform.position, range);
+	}
+	
+	void FixedUpdate()
     {
-        //if (Vector2.Distance(transform.position, player.position) > stoppingDistance) {
-        //    transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        //} else if(Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > stoppingDistance){
-        //    transform.position = this.transform.position;
-        //} else  if(Vector2.Distance(transform.position, player.position) < retreatDistance) {
-        //    transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
-        //}
+       
 
         if (timeBtwShots <= 0)
         {
