@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 182077662}
   - component: {fileID: 182077663}
   - component: {fileID: 182077661}
-  - component: {fileID: 182077660}
   m_Layer: 0
   m_Name: VolcanoPlanet
   m_TagString: Untagged
@@ -146,22 +145,6 @@ Transform:
   m_Father: {fileID: 1073216336}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &182077660
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182077658}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5.9
 --- !u!58 &182077661
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -238,10 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd590214ae8d4f2684900bab0d04036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  stoppingDistance: 20
-  retreatDistance: 10
-  startTimeBtwShots: 1
+  rotationSpeed: 0
+  rangeDistance: 10
+  distanceToPlayer: 0
+  startTimeBtwShots: 0.75
   projectile: {fileID: 4106846292376840404, guid: 82a8b3e217be14f93828e6a5aa00291f,
     type: 3}
 --- !u!1 &340428847

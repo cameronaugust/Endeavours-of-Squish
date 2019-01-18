@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         {
-            rb.velocity = transform.up * speeds;
+            rb.velocity = transform.up * speed;
             Destroy(gameObject, TimeToLive);
         }
 

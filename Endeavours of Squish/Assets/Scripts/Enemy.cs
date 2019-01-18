@@ -1,64 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Enemy : MonoBehaviour
-{
-    
-
-    private float timeBtwShots;
-    public float startTimeBtwShots;
-
-    public GameObject projectile;
-    private Transform target;
-	public float range = 15f;
-	public GameObject target;
-	public Rigidbody2D planet;
-	 
-
-    // Start is called before the first frame update
-    void Start()
-	{ 
-		InvokeRepeating ("UpdateTarget", 0f, 0.5f);
-
-    target = GameObject.FindGameObjectWithTag("Player").transform;
-
-        timeBtwShots = startTimeBtwShots;
-    }
-
-	void UpdateTarget ()
-	{
-
-	}
-
-    // Update is called once per frame
-   
-
-	Vector2 dir = target.position - transform.position;
-	Quaternion lookRotation = Quaternion.LookRotation (dir);
-	Vector2 rotation = lookRotation.eulerAngles; 
-	planet.rotation = Quaternion.Euler (0f, rotation.y, 0f);
-
-	}
-
-	void OnDrawGizmosSelected ()
-	{
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere (transform.position, range);
-	}
-	
-	void FixedUpdate()
-    {
-       
-
-        if (timeBtwShots <= 0)
+﻿using System.Collections; using System.Collections.Generic; using UnityEngine;  public class Enemy : MonoBehaviour {       public float rangeDistance;
+    public float distanceToPlayer;      private float timeBtwShots;     public float startTimeBtwShots;      public GameObject projectile;     private Transform player;          void Start()     {          //setting variable player to the object with Tag called "Player"     player = GameObject.FindGameObjectWithTag("Player").transform;         //setting the time between shots to equal the time set to the original start time shot         timeBtwShots = startTimeBtwShots;     }      void FixedUpdate()     {         distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        if (distanceToPlayer < rangeDistance)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            timeBtwShots = startTimeBtwShots;
-        }
-        else
-        {
-            timeBtwShots -= Time.deltaTime;
-        }
-    }
-}
+            //checking if the time between the last shot is less than or equal to zero
+            if (timeBtwShots <= 0)
+            {
+                //creates planents assigned projectile
+                Instantiate(projectile, transform.position, Quaternion.identity);
+                //resets time after projectile has been created to the start time for next instatiation
+                timeBtwShots = startTimeBtwShots;
+            }             //if the time between shots is not less than or equal to zero (i.e. greater than zero) 
+            else
+            {
+                //sets time subtracted by the time elapsed
+                timeBtwShots -= Time.deltaTime;
+            }
+             //Rotation Code
+           //Vector3 target = player.position;             //intializes direction variable to rotate towards based on player location
+            Vector2 direction = new Vector2(
+            player.position.x - transform.position.x,
+            player.position.y - transform.position.y
+           );
+            //sets the direction to rotate towards
+            transform.up = direction;
+        }     } }  
