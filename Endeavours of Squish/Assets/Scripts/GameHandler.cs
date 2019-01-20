@@ -11,7 +11,7 @@ public class GameHandler : MonoBehaviour
 
         Debug.Log("Health; " + healthSystem.GetHealth());
 
-        CMDebug.ButtonUI(new Vector2(100,100), "damage", () =>
+       // CMDebug.ButtonUI(new Vector2(100,100), "damage", () =>
 
     }
 
