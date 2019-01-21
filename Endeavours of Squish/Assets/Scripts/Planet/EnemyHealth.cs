@@ -11,7 +11,8 @@ public class EnemyHealth : MonoBehaviour
     public int goodRep;
     public int badRep;
     public PlayerController playerController;
-    public Enemy _Enemy;
+    public Enemy enemy;
+    public GameObject self;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +32,8 @@ public class EnemyHealth : MonoBehaviour
     
     void makeDead()
     {
-        Destroy(gameObject);
-        Destroy(_Enemy.spawnedBoundary);
+        Destroy(self);
+        Destroy(enemy.spawnedBoundary);
        
     }
     public void reputation(int g, int b)

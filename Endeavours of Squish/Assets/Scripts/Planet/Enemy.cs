@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     private Transform player;
     public GameObject boundary;
     public GameObject spawnedBoundary;
-
+    public GameObject planet;
     private bool boundaryOn = false;
 
     //values to set per planet

@@ -103,6 +103,9 @@ MonoBehaviour:
   boundary: {fileID: 5122544274808459464, guid: cf44c02bec03109478c5947c0135b66b,
     type: 3}
   spawnedBoundary: {fileID: 0}
+  planet: {fileID: 4837480862583253906}
+  goodRep: 0
+  badRep: 0
 --- !u!58 &4837480862583253910
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,7 +139,8 @@ MonoBehaviour:
   goodRep: 5
   badRep: 1
   playerController: {fileID: 0}
-  _Enemy: {fileID: 4837480862583253909}
+  enemy: {fileID: 0}
+  self: {fileID: 4837480862583253906}
 --- !u!50 &4837480862583253904
 Rigidbody2D:
   serializedVersion: 4
