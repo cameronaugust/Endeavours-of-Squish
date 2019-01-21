@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 100
+  damage: 200
   rb: {fileID: 623901415525829855}
   TimeToLive: 4
 --- !u!50 &623901415525829855
