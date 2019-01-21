@@ -16,7 +16,10 @@ public class Enemy : MonoBehaviour
     public GameObject spawnedBoundary;
 
     private bool boundaryOn = false;
-    
+
+    //values to set per planet
+    public int goodRep;
+    public int badRep;
 
     void Start()
     {
