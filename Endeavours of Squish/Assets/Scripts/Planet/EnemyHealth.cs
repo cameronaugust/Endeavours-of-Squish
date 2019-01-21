@@ -8,39 +8,44 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField]
     private float currentHealth;
-    public int goodRep;
-    public int badRep;
-    public PlayerController playerController;
+
+    public float goodRep;
+    public float badRep;
+    public GameObject Player;
     public Enemy enemy;
-    public GameObject self;
+    public PlayerController rep;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = enemyMaxHealth;
+        rep = FindObjectOfType <PlayerController>();
     }
 
     public void addDamage(float damage)
     {
         currentHealth -= damage;
-        if (currentHealth <= 0 && playerController != null) {
-            reputation(goodRep, badRep);
+        if (currentHealth <= 0)
+        {
+            Reputation(goodRep, badRep);
             Debug.Log("Points earned");
-            makeDead();
+            MakeDead();
             Debug.Log("Planet Destroyed");
         }
     }
-    
-    void makeDead()
+
+    void MakeDead()
     {
-        Destroy(self);
-        Destroy(enemy.spawnedBoundary);
-       
-    }
-    public void reputation(int g, int b)
-    {
-        playerController.increaseGoodRep(g);
-        playerController.increaseBadRep(b);
+        Destroy(enemy.planet.gameObject);
+        Destroy(enemy.spawnedBoundary.gameObject);
 
     }
+    void Reputation(float g, float b)
+    {
+        
+            Debug.Log("Gained");
+            rep.IncreaseGoodRep(g);
+            rep.IncreaseBadRep(b);
+        
 
+    }
 }

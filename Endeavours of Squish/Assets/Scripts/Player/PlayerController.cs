@@ -25,12 +25,14 @@ public class PlayerController : MonoBehaviour
 
     }
     //increases values of rep from planet destroyed and monitors the values to HUD
-    public void increaseGoodRep(float GoodRep)
+    public void IncreaseGoodRep(float GoodRep)
     {
+        Debug.Log("Adding Good");
         good.CurrentVal += GoodRep;
     }
-    public void increaseBadRep(float BadRep)
+    public void IncreaseBadRep(float BadRep)
     {
+        Debug.Log("Adding Bad");
         bad.CurrentVal += BadRep;
     }
 

@@ -97,15 +97,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangeDistance: 8.5
   distanceToPlayer: 0
-  startTimeBtwShots: 0.5
+  startTimeBtwShots: 1
   projectile: {fileID: 5799298040795162088, guid: a6df805663d9b4542a72f79e0b12a79a,
     type: 3}
-  boundary: {fileID: 5122544274808459464, guid: cf44c02bec03109478c5947c0135b66b,
-    type: 3}
+  boundary: {fileID: 0}
   spawnedBoundary: {fileID: 0}
   planet: {fileID: 4989378938170867624}
-  goodRep: 0
-  badRep: 0
 --- !u!58 &4989378938170867628
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,9 +135,9 @@ MonoBehaviour:
   currentHealth: 0
   goodRep: 0
   badRep: 20
-  playerController: {fileID: 0}
+  Player: {fileID: 4989378938170867624}
   enemy: {fileID: 4989378938170867631}
-  self: {fileID: 4989378938170867624}
+  rep: {fileID: 0}
 --- !u!50 &4989378938170867626
 Rigidbody2D:
   serializedVersion: 4
