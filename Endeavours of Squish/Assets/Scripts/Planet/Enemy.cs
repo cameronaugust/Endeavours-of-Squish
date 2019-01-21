@@ -18,8 +18,7 @@ public class Enemy : MonoBehaviour
     private bool boundaryOn = false;
 
     //values to set per planet
-    public int goodRep;
-    public int badRep;
+  
 
     void Start()
     {
@@ -52,7 +51,6 @@ public class Enemy : MonoBehaviour
                 }
 
                 //Rotation Code
-                //Vector3 target = player.position;
                 //intializes direction variable to rotate towards based on player location
                 Vector2 direction = new Vector2(
                 player.position.x - transform.position.x,
