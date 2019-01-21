@@ -25,6 +25,10 @@ public class Projectile : MonoBehaviour
             hurtEnemy.addDamage(damage);
             DestroyProjectile();
         }
+        if (other.CompareTag("Boundary"))
+        {
+            DestroyProjectile();
+        }
     }
     void DestroyProjectile()
     {

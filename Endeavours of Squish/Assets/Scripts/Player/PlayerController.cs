@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Stat health;
 
+
      void FixedUpdate()
     {
       //check to see where the nearest planent is and if it is far away enough, regenerate health at slow rate
@@ -16,9 +17,13 @@ public class PlayerController : MonoBehaviour
         health.Initialize();
        
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    public void addDamage(float damage)
     {
-        Debug.Log("Damage indicated");
-        health.CurrentVal -= 10;
+        health.CurrentVal -= damage;
+        if (health.CurrentVal <= 0) makeDead();
+    }
+    private void makeDead()
+    {
+        Destroy(gameObject);
     }
 }

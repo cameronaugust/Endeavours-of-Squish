@@ -16,6 +16,7 @@ public class BasicMovement : MonoBehaviour
     // Update is called once to several times per frame for better physics
     void FixedUpdate()
     {
+        if (player != null) { 
         //moving Left and facing left
 
         //applying movement
@@ -24,6 +25,7 @@ public class BasicMovement : MonoBehaviour
         movement = new Vector2(moveHorizontal, moveVertical);
         player.AddForce(movement * speed);
         FaceMouse();
+        }
     }
     //comment
     void FaceMouse()

@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public GameObject spawnedBoundary;
 
     private bool boundaryOn = false;
+    
 
     void Start()
     {
@@ -27,42 +28,45 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer < rangeDistance)
+        if (player != null)
         {
-            //checking if the time between the last shot is less than or equal to zero
-            if (timeBtwShots <= 0)
+            distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            if (distanceToPlayer < rangeDistance)
             {
-                //creates planents assigned projectile
-                Instantiate(projectile, transform.position, Quaternion.identity);
-                //resets time after projectile has been created to the start time for next instatiation
-                timeBtwShots = startTimeBtwShots;
-            }
-            //if the time between shots is not less than or equal to zero (i.e. greater than zero) 
-            else
-            {
-                //sets time subtracted by the time elapsed
-                timeBtwShots -= Time.deltaTime;
-            }
+                //checking if the time between the last shot is less than or equal to zero
+                if (timeBtwShots <= 0)
+                {
+                    //creates planents assigned projectile
+                    Instantiate(projectile, transform.position, Quaternion.identity);
+                    //resets time after projectile has been created to the start time for next instatiation
+                    timeBtwShots = startTimeBtwShots;
+                }
+                //if the time between shots is not less than or equal to zero (i.e. greater than zero) 
+                else
+                {
+                    //sets time subtracted by the time elapsed
+                    timeBtwShots -= Time.deltaTime;
+                }
 
-            //Rotation Code
-            //Vector3 target = player.position;
-            //intializes direction variable to rotate towards based on player location
-            Vector2 direction = new Vector2(
-            player.position.x - transform.position.x,
-            player.position.y - transform.position.y
-           );
-            //sets the direction to rotate towards
-            transform.up = direction;
-        }
-        if (distanceToPlayer < rangeDistance - .75 && boundaryOn == false)
-        {
-            AwakeBarrier();
-        }
-        void AwakeBarrier()
-        {
-            spawnedBoundary = Instantiate(boundary, transform.position, Quaternion.identity);
-            boundaryOn = true;
+                //Rotation Code
+                //Vector3 target = player.position;
+                //intializes direction variable to rotate towards based on player location
+                Vector2 direction = new Vector2(
+                player.position.x - transform.position.x,
+                player.position.y - transform.position.y
+               );
+                //sets the direction to rotate towards
+                transform.up = direction;
+            }
+            if (distanceToPlayer < rangeDistance - .75 && boundaryOn == false)
+            {
+                AwakeBarrier();
+            }
+            void AwakeBarrier()
+            {
+                spawnedBoundary = Instantiate(boundary, transform.position, Quaternion.identity);
+                boundaryOn = true;
+            }
         }
     }
 }

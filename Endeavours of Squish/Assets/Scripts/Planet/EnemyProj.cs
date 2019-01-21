@@ -8,7 +8,6 @@ public class EnemyProj : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
-
     public int damage;
 
     void Start()
@@ -33,7 +32,12 @@ public class EnemyProj : MonoBehaviour
     //when the enemy projectile hits player
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            PlayerController hurtPlayer = other.gameObject.GetComponent<PlayerController>();
+            hurtPlayer.addDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }
           
