@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{82EF183A-575C-75F0-467B-66DCC158A3CF}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Enemy.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/BasicMovement.cs" Line="35" Column="53" />
+      <File FileName="Assets/Scripts/EnemyProj.cs" Line="19" Column="6" />
+      <File FileName="Assets/Scripts/BGGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/PauseMenu.cs" Line="45" Column="6" />
+      <File FileName="Assets/Scripts/UI/Death.cs" Line="15" Column="45" />
+      <File FileName="Assets/Scripts/HUD/BarScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/PlayerController.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

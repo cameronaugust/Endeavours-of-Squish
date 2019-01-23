@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
@@ -10,5 +8,10 @@ public class Death : MonoBehaviour
     {
         Debug.Log("Loading game...");
         SceneManager.LoadScene("Main");
+    }
+    public void LaodMenu()
+    {
+        Debug.Log("Loading menu...");
+        SceneManager.LoadScene("main menu");
     }
 }
